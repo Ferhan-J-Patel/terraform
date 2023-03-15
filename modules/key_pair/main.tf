@@ -10,5 +10,5 @@ resource "aws_key_pair" "example" {
 
 resource "local_file" "public_key" {
   content  = aws_key_pair.example.public_key
-  filename = "/home/ubuntu/example-key.pub"
+  filename = "/home/fjp/example-key.pub"
 }
