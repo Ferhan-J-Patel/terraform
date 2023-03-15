@@ -30,7 +30,7 @@ module "sg" {
 module "key_pair" {
   source = "./modules/key_pair"
 
-  filename           = var.file_name
+  key_name      = var.ec2_key_pair_name
 }
 
 module "ec2" {
