@@ -10,5 +10,5 @@ sg_ingress_to_port = 80
 sg_ingress_protocol = "tcp"
 sg_cidr_blocks = ["0.0.0.0/0"]
 
-ec2_ami_id = "ami-0c94855ba95c71c99"
+ec2_ami_id = "ami-0caf778a172362f1c"
 ec2_instance_type = "t2.micro"
