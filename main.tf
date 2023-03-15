@@ -42,7 +42,7 @@ module "ec2" {
   subnet_id      = module.vpc.public_subnet_ids[0]
   sg_ids         = [module.sg.sg_id]
   tags           = var.ec2_tags
-  key_pair_name  = module.key_pair.key_pair_name
+  key_name  = module.key_pair.key_pair_name
   depends_on = [
     module.vpc,
     module.sg,
