@@ -31,7 +31,7 @@ module "key_pair" {
   source = "./modules/key_pair"
 
   key_pair_name  = var.ec2_key_pair_name
-  file_loc       = var.pem_file_loc 
+  file_loc       = var.pem_loc 
 }
 
 module "ec2" {

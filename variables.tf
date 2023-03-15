@@ -54,7 +54,7 @@ variable "ec2_key_pair_name" {
   default     = "example-key"
 }
 
-variable "pem_file_loc " {
+variable "pem_loc " {
   description = "File location wherepem will be downloaded"
   type        = string
   default     = "/home/fjp/example-key.pem"
