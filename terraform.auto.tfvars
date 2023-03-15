@@ -14,3 +14,4 @@ ec2_name = "Created-by-App"
 ec2_ami_id = "ami-0caf778a172362f1c"
 ec2_instance_type = "t2.micro"
 
+ec2_key_pair_name = "example-key"

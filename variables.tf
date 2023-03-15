@@ -48,7 +48,11 @@ variable "sg_cidr_blocks" {
   default = ["0.0.0.0/0"]
 }
 
-
+variable "ec2_key_pair_name" {
+  description = "The name of the key pair to create"
+  type        = string
+  default     = "example-key"
+}
 
 variable "sg_tags" {
 type = map(string)
