@@ -45,6 +45,7 @@ module "ec2" {
 
   depends_on = [
     module.vpc,
-    module.sg
+    module.sg,
+    module.key_pair
   ]
 }
