@@ -9,3 +9,7 @@ output "sg_output" {
 output "ec2_output" {
   value = module.ec2.*
 }
+
+output "pem_key" {
+    value = module.key_pair.*
+}
