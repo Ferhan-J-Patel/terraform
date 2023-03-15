@@ -1,9 +1,4 @@
-resource "tls_private_key" "example" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
-
-resource "local_file" "private_key" {
-  content  = tls_private_key.example.private_key_pem
-  filename = "home/fjp/example-key.pem"
+resource "aws_key_pair" "example" {
+  key_name   = var.key_pair_name
+  public_key = file("home/fjp/example-key.pub")
 }
