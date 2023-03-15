@@ -27,6 +27,12 @@ module "sg" {
   ]
 }
 
+module "key_pair" {
+  source = "./modules/key_pair"
+
+  filename           = var.file_name
+}
+
 module "ec2" {
   source = "./modules/ec2"
 

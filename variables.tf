@@ -48,6 +48,11 @@ variable "sg_cidr_blocks" {
   default = ["0.0.0.0/0"]
 }
 
+variable "file_name" {
+  type    = string
+  default = "tf_key_pair"
+}
+
 variable "sg_tags" {
 type = map(string)
 default = {}
