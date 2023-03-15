@@ -1,12 +1,6 @@
-module "key_pair" {
-  source = "../key_pair"
-}
-
 resource "aws_instance" "main" {
   ami           = var.ami_id
   instance_type = var.instance_type
-
-  key_name      = module.key_pair.key_pair_name
 
   subnet_id     = var.subnet_id
 
