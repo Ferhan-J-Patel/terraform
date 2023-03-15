@@ -1,5 +1,5 @@
 module "key_pair" {
-  source = "./key-pair"
+  source = "../key-pair"
 }
 
 resource "aws_instance" "main" {
