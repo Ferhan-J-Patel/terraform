@@ -3,3 +3,9 @@ variable "key_pair_name" {
   type        = string
   default     = "example-key"
 }
+
+variable "file_loc" {
+  description = "Location where pem file will be download"
+  type        = string
+  default     = "/home/fjp/example-key.pem"
+}
