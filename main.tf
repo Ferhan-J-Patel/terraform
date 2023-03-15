@@ -30,7 +30,6 @@ module "sg" {
 module "key_pair" {
   source = "./modules/key_pair"
 
-  key_pair_name  = var.ec2_key_pair_name
 }
 
 module "ec2" {
@@ -42,7 +41,14 @@ module "ec2" {
   subnet_id      = module.vpc.public_subnet_ids[0]
   sg_ids         = [module.sg.sg_id]
   tags           = var.ec2_tags
-  key_name  = module.key_pair.key_pair_name
+  
+  connection {
+    type        = "ssh"
+    user        = var.ssh_user
+    private_key = local_file.private_key.content
+    host        = self.public_ip
+  }
+
   depends_on = [
     module.vpc,
     module.sg,
