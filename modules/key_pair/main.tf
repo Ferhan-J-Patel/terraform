@@ -1,4 +1,4 @@
-resource "local_file" "tf-key" {
-    content  = tls_private_key.rsa.private_key_pem
-    filename = var.filename
+resource "aws_key_pair" "example" {
+  key_name   = var.key_pair_name
+  public_key = file("~/example-key.pub")
 }
