@@ -21,6 +21,10 @@ module "sg" {
   ingress_protocol    = var.sg_ingress_protocol
   cidr_blocks         = var.sg_cidr_blocks
   tags                = var.sg_tags
+
+  depends_on = [
+    module.vpc
+  ]
 }
 
 module "ec2" {
