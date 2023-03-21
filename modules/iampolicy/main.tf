@@ -4,6 +4,10 @@ resource "aws_iam_policy" "custom_policy" {
   policy      = "${file("region_restrict.json")}"
 }
 
+output "custom_policy_arn" {
+  value = aws_iam_policy.custom_policy.arn
+}
+
 variable "policy_arns" {
     type = list(string)
     default = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", "${output.custom_policy_arn}"]
