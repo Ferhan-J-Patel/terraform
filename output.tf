@@ -21,7 +21,7 @@ output "iam" {
 }
 
 output "iampolicy" {
-  value = module.iampolicy.*
+  value = module.iam_policy.*
   sensitive = true
 }
   
