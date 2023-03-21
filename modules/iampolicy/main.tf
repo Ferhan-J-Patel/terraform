@@ -11,7 +11,7 @@ output "custom_policy_arn" {
 variable "policy_arns" {
     type = list(string)
     default = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-                "${aws_iam_policy.custom_policy.arn}"
+                "${output.custom_policy_arn}"
                 ]
 }
 
