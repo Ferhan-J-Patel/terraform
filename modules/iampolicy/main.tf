@@ -4,7 +4,7 @@ resource "aws_iam_policy" "custom_policy" {
   policy      = "${file("region_restrict.json")}"
 }
 
-output "custom_policy_arn" {
+output "policy_code" {
     value = aws_iam_policy.custom_policy.arn
 }
 
