@@ -12,4 +12,14 @@ output "ec2_output" {
 
 output "pem_key" {
     value = module.key_pair.*
+    sensitive = true
+}
+
+output "iam" {
+value = module.iam.*
+sensitive = true
+}
+  
+output "ac_id" {
+  value = data.aws_caller_identity.current.account_id
 }
