@@ -4,19 +4,10 @@ resource "aws_iam_policy" "custom_policy" {
   policy      = "${file("region_restrict.json")}"
 }
 
-output "custom_policy_arn" {
-  value = aws_iam_policy.custom_policy.arn
-}
-
-variable "policy_arns" {
-    type = list(string)
-    default = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+resource "aws_iam_user_policy_attachment" "demo-attach"{
+    for_each = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess",
                 "${output.custom_policy_arn}"
                 ]
-}
-
-resource "aws_iam_user_policy_attachment" "demo-attach"{
-    count = length(var.policy_arns)
     user = var.iam_user
-    policy_arn = var.policy_arns[count.index]
+    policy_arn = each.value
 }
