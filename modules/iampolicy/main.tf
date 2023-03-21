@@ -6,7 +6,7 @@ resource "aws_iam_policy" "policy" {
 
 variable "policy_arns" {
     type = list(string)
-    default = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess",aws_iam_policy.policy.arn]
+    default = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess", aws_iam_policy.policy.arn]
 }
 
 resource "aws_iam_user_policy_attachment" "demo-attach"{
