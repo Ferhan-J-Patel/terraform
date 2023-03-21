@@ -4,7 +4,8 @@ data "terraform_remote_state" "iam_user" {
     // backend configuration for the IAM user module
   }
   workspace = "iam_user_module_workspace"
-  module = "../iam"
+  module = "iam"
+  source = "../iam"
 }
 
 resource "aws_iam_policy" "policy" {
