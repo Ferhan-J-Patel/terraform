@@ -6,5 +6,5 @@ resource "aws_iam_policy" "policy" {
 
 resource "aws_iam_user_policy_attachment" "demo-attach"{
     user = var.iam_user
-    policy_arn = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess","aws_iam_policy.policy.arn"]
+    policy_arn = ["arn:aws:iam::aws:policy/AmazonEC2FullAccess","aws_iam_policy.policy.0.arn"]
 }
