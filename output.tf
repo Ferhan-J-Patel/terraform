@@ -11,13 +11,18 @@ output "ec2_output" {
 }
 
 output "pem_key" {
-    value = module.key_pair.*
-    sensitive = true
+  value = module.key_pair.*
+  sensitive = true
 }
 
 output "iam" {
-value = module.iam.*
-sensitive = true
+  value = module.iam.*
+  sensitive = true
+}
+
+output "iampolicy" {
+  value = module.iampolicy.*
+  sensitive = true
 }
   
 output "ac_id" {

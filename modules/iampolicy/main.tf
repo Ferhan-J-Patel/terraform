@@ -1,13 +1,3 @@
-data "terraform_remote_state" "iam_user" {
-  backend = "backend_type"
-  config = {
-    // backend configuration for the IAM user module
-  }
-  workspace = "iam_user_module_workspace"
-  module = "iam"
-  source = "../iam"
-}
-
 resource "aws_iam_policy" "policy" {
   name        = "AmazonEC2FullAccess"
   description = "A ec2 policy"
@@ -15,6 +5,6 @@ resource "aws_iam_policy" "policy" {
 }
 
 resource "aws_iam_user_policy_attachment" "demo-attach"{
-    user = data.terraform_remote_state.iam_user.outputs.iam_username
+    user = var.iam_user
     policy_arn = "${aws_iam_policy.policy.arn}"
 }

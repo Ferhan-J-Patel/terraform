@@ -51,8 +51,14 @@ module "ec2" {
   ]
 }
 
-module "iam"{
-source = "./iam"
+module "iam" {
+  source = "./modules/iam"
+}
+
+module "iam_policy" {
+  source = "./modules/iampolicy"
+
+  iam_user = module.iam.iam_user
 }
 
 data "aws_caller_identity" "current" {}    
