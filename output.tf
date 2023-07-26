@@ -1,21 +1,21 @@
-output "vpc_output" {
+/*output "vpc_output" {
   value = module.vpc.*
 }
 
 output "sg_output" {
   value = module.sg.*
-}
+}*/
 
 output "ec2_output" {
   value = module.ec2.*
 }
 
-output "pem_key" {
+/*output "pem_key" {
   value = module.key_pair.*
   sensitive = true
 }
 
-/*output "iam" {
+output "iam" {
   value = module.iam.*
   sensitive = true
 }
