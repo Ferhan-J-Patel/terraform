@@ -2,7 +2,7 @@ provider "aws" {
   region = var.region
 }
 
-module "vpc" {
+/*module "vpc" {
   source = "./modules/vpc"
 
   name                    = var.vpc_name
@@ -32,7 +32,7 @@ module "key_pair" {
 
   key_pair_name  = var.ec2_key_pair_name
   file_loc       = var.pem_loc 
-}
+}*/
 
 module "ec2" {
   source = "./modules/ec2"
@@ -40,15 +40,15 @@ module "ec2" {
   name           = var.ec2_name
   ami_id         = var.ec2_ami_id
   instance_type  = var.ec2_instance_type
-  subnet_id      = module.vpc.public_subnet_ids[0]
-  sg_ids         = [module.sg.sg_id]
+  subnet_id      = "subnet-01f15a36f0951b892"
+  //sg_ids         = [module.sg.sg_id]
   tags           = var.ec2_tags
-  key_name  = module.key_pair.key_pair_name
-  depends_on = [
+  key_name  = "IGI-Kali-RDP"
+  /*depends_on = [
     module.vpc,
     module.sg,
     module.key_pair
-  ]
+  ]*/
 }
 
 /*module "iam" {
